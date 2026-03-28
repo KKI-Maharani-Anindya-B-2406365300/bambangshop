@@ -91,3 +91,8 @@ This is the place for you to write reflections:
 3. Postman is really helpful for testing APIs without needing a frontend. It lets me quickly send requests and see the responses, so I can check if everything works correctly. Features like collections and environment variables also help keep testing more organized and reusable. 
 
 #### Reflection Publisher-3
+1. In this tutorial, we use the push model. The publisher directly sends the notification data to each subscriber when an event happens.
+
+2. If we use the pull model, subscribers have to request the data themselves after being notified. The advantage is they can choose what data they want to get. However, the downside is it's less efficient because it needs extra requests, which is not really necessary here since the data we send is already simple and fixed.
+
+3. If we do not use multithreading, the notification process will run sequentially. That means every subscriber is handled one by one, which can slow down the app, especially if there are many subscribers or slow responses. It could make the main request feel delayed instead of being fast and responsive.

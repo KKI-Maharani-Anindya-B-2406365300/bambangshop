@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. In this case, using a trait is not necessary because the Subscriber only stores data and does not have different behaviors. A single Model struct is enough unless we want multiple types of Subscriber with different logic in the future.
+
+2. A Vec is technically sufficient because it can still store all subscribers or products. However, for this case, DashMap is more suitable. Since id and url are supposed to be unique, a map makes it easier and faster to look up, insert, or delete data without manually checking the whole list every time. 
+
+3. The Singleton pattern only ensures a single instance, but it does not guarantee thread safety. Since Rust requires safe concurrent access, we still need DashMap to handle that. Thus, DashMap is still necessary.
 
 #### Reflection Publisher-2
 

@@ -84,5 +84,10 @@ This is the place for you to write reflections:
 3. The Singleton pattern only ensures a single instance, but it does not guarantee thread safety. Since Rust requires safe concurrent access, we still need DashMap to handle that. Thus, DashMap is still necessary.
 
 #### Reflection Publisher-2
+1. Separating Service and Repository from Model makes the code more organized. Repository handles data access, Service handles business logic, and Model stays as data. This follows good design principles and make the code easier to maintain and extend. 
+
+2. If we only use Model, each model would handle too many responsibilities. Program, Subscriber, and Notification would be more tightly connected, making the code more complex and harder to manage. 
+
+3. Postman is really helpful for testing APIs without needing a frontend. It lets me quickly send requests and see the responses, so I can check if everything works correctly. Features like collections and environment variables also help keep testing more organized and reusable. 
 
 #### Reflection Publisher-3
